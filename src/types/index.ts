@@ -1,5 +1,6 @@
 export interface IFriendProps {
   friend: {
+    id: number;
     name: string;
     likes: number;
   };
