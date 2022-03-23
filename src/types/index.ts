@@ -3,6 +3,7 @@ export interface IFriendProps {
     id: number;
     name: string;
     likes: number;
+    online;
   };
   follow: (id: number) => void;
 }
@@ -12,6 +13,7 @@ export interface ISearchResultProps {
     id: number;
     name: string;
     likes: number;
+    online: string;
   }[];
   follow: (id: number) => void;
 }

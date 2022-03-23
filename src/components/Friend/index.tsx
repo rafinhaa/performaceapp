@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from "react-native";
 import { IFriendProps } from "../../types";
 
 const FriendComponent: React.FC<IFriendProps> = ({
-  friend: { name, likes, id },
+  friend: { name, likes, id, online },
   follow,
 }) => {
   return (
@@ -12,6 +12,7 @@ const FriendComponent: React.FC<IFriendProps> = ({
       <TouchableOpacity onPress={() => follow(id)}>
         <Text>Deixar de seguir</Text>
       </TouchableOpacity>
+      <Text>Online em: {online}</Text>
     </View>
   );
 };

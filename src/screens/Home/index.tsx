@@ -16,7 +16,13 @@ const Home: React.FC = () => {
   const handleSearchPeople = async () => {
     const response = await fetch(`http://192.168.15.34:3333/friends?q=${name}`);
     const data = await response.json();
-    setFriends(data);
+    const formattedData = data.map((friend) => ({
+      id: friend.id,
+      name: friend.name,
+      likes: friend.likes,
+      online: `${new Date().getHours()}h ${new Date().getMinutes()}m`,
+    }));
+    setFriends(formattedData);
   };
 
   const handleFollow = useCallback((id: number) => {
